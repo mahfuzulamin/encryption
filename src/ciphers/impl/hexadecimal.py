@@ -1,4 +1,3 @@
-# import binascii
 
 class Hexadecimal:
     def __init__(self, message):

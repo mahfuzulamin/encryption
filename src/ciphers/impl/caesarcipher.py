@@ -1,4 +1,6 @@
-class CaesarCipher:
+from ..interface.cipher_interface import CipherInterface
+
+class CaesarCipher(CipherInterface):
     lowarCaseAsciiValueStart = ord("a")
     upperCaseAsciiValueStart = ord("A")
 

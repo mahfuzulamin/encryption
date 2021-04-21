@@ -1,5 +1,7 @@
 
-class Hexadecimal:
+from ..interface.cipher_interface import CipherInterface
+
+class Hexadecimal(CipherInterface):
     def __init__(self, message):
         self.message = message
 

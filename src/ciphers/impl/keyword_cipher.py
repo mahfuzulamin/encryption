@@ -1,4 +1,6 @@
-class KeywordCipher:
+from ..interface.cipher_interface import CipherInterface
+
+class KeywordCipher(CipherInterface):
     lowarCaseAsciiValueStart = ord("a")
     upperCaseAsciiValueStart = ord("A")
     plaintext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

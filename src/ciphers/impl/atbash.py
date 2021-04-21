@@ -1,4 +1,6 @@
-class AtBash:
+from ..interface.cipher_interface import CipherInterface
+
+class AtBash(CipherInterface):
     lowarCaseAsciiTotal = ord('z') + ord('a')
     upperCaseAsciiTotal = ord('Z') + ord('A')
 

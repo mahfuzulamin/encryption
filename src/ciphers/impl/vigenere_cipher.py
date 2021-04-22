@@ -19,8 +19,7 @@ class VigenereCipher(CipherInterface):
         print(f"VigenereCipher key is {key}.")
 
         return key
-        
-
+    
     def encode(self):
         print(f"Hex encode;message is {self.message}.")
 

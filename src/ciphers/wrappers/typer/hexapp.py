@@ -1,6 +1,7 @@
 import typer
  
 from ...impl.hexadecimal import Hexadecimal
+# from ...interface.cipher_interface import CipherInterface
 
 def get_hex_app():
     
@@ -10,6 +11,7 @@ def get_hex_app():
     def encode(message):
         """Encodes a message using the hex cipher"""
         hex = Hexadecimal(message)
+        hex.hudai()
         encodedMsg = hex.encode()
         print(f"Hex encoded message is {encodedMsg}.")
 
@@ -17,6 +19,7 @@ def get_hex_app():
     def decode(message):
         """Decodes a message using the hex cipher"""
         hex = Hexadecimal(message)
+        hex.hudai()
         decodedMsg = hex.decode()
         print(f"Hex decoded message is {decodedMsg}.")
 

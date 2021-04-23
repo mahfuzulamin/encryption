@@ -15,6 +15,7 @@ flake8 = "==3.8.3"
 
 [packages]
 typer = "==0.3.2"
+pytest = "*"
 
 [requires]
 python_version = "3.8.5"

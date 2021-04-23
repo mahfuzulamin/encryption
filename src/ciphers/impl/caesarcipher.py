@@ -22,10 +22,10 @@ class CaesarCipher(CipherInterface):
         
         return result
 
-    def encode(self):
+    def _encode_text(self):
         print(f"Caesar Cipher encode; received message is {self.message}.")       
         return self.applyCipher(True)
 
-    def decode(self):
+    def _decode_text(self):
         print(f"CaesarCipher decode; received message is {self.message}.")
         return self.applyCipher(False)

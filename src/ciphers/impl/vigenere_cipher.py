@@ -20,7 +20,7 @@ class VigenereCipher(CipherInterface):
 
         return key
     
-    def encode(self):
+    def _encode_text(self):
         print(f"Hex encode;message is {self.message}.")
 
         finalKey = self.applyCipher(self.keyword)
@@ -31,7 +31,7 @@ class VigenereCipher(CipherInterface):
 
         return cipherText
 
-    def decode(self):
+    def _decode_text(self):
         print(f"Hex decode; message is {self.message}.")
 
         finalKey = self.applyCipher(self.keyword)

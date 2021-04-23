@@ -18,10 +18,10 @@ class AtBash(CipherInterface):
         
         return cipherMsg
 
-    def encode(self):
+    def _encode_text(self):
         print(f"AtBash encode; received message is {self.message}.")
         return self.applyCipher()
 
-    def decode(self):
+    def _decode_text(self):
         print(f"AtBash decode; received message is {self.message}.")
         return self.applyCipher()

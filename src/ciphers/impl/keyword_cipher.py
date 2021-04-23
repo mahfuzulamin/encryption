@@ -32,7 +32,7 @@ class KeywordCipher(CipherInterface):
 
         return encoded
 
-    def encode(self):
+    def _encode_text(self):
         print(f"Keyword Cipher encode; received message is {self.message}.")
         
         encodedMessage = self.applyCipher()       
@@ -46,7 +46,7 @@ class KeywordCipher(CipherInterface):
 
         return cipher
 
-    def decode(self):
+    def _decode_text(self):
         print(f"Keyword decode; received message is {self.message}.")
         deCipher = ""
         encodedMessage = self.applyCipher()

@@ -9,6 +9,9 @@ class KeywordCipher(CipherInterface):
         self.message = message
         self.keyword = keyword
 
+    def _validate_input(self):
+        pass
+    
     def applyCipher(self):
         encoded = ""
         characterList = [False] * 26

@@ -1,4 +1,6 @@
 from ..interface.cipher_interface import CipherInterface
+from ..error.validation_exception import ValidationException
+from ..util.cipher_util import is_empty
 
 class AtBash(CipherInterface):
     lowarCaseAsciiTotal = ord('z') + ord('a')
@@ -6,6 +8,10 @@ class AtBash(CipherInterface):
 
     def __init__(self, message):
         self.message = message
+
+    def _validate_input(self):
+        if is_empty(self.message) == True:
+            raise ValidationException("Message cannont be empty.")
 
     def applyCipher(self):
         cipherMsg = ''

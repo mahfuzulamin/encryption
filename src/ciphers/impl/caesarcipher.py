@@ -8,6 +8,9 @@ class CaesarCipher(CipherInterface):
         self.message = message
         self.shiftIndex = shiftIndex
 
+    def _validate_input(self):
+        pass
+    
     def applyCipher(self, encode):
         result = ""
         for charStr in self.message:

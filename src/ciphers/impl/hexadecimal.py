@@ -1,9 +1,18 @@
 
 from ..interface.cipher_interface import CipherInterface
+from ..util.cipher_util import is_empty
+from ..error.validation_exception import ValidationException
 
 class Hexadecimal(CipherInterface):
     def __init__(self, message):
         self.message = message
+
+
+    # def _validate_input(self, message, shiftIndex, key):
+    def _validate_input(self):
+        if is_empty(self.message) == True:
+            raise ValidationException("Message cannont be empty.")
+
 
     def _encode_text(self):
         print(f"Hex encode;message is {self.message}.")

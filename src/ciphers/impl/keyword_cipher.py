@@ -1,18 +1,26 @@
 from ..interface.cipher_interface import CipherInterface
+from ..util.cipher_util import is_empty
+from ..error.validation_exception import ValidationException
 
 class KeywordCipher(CipherInterface):
     lowarCaseAsciiValueStart = ord("a")
     upperCaseAsciiValueStart = ord("A")
     plaintext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    def __init__(self, message, keyword):
+    def __init__(self):
+        pass
+
+    def _initialize(self, message, shiftIndex=None, key=None):
         self.message = message
-        self.keyword = keyword
+        self.keyword = key
 
     def _validate_input(self):
-        pass
-    
-    def applyCipher(self):
+        if is_empty(self.message) == True:
+            raise ValidationException("Message cannont be empty.")
+        elif is_empty(self.keyword) == True:
+            raise ValidationException("Key cannont be empty.")    
+
+    def _applyCipher(self):
         encoded = ""
         characterList = [False] * 26
 
@@ -38,7 +46,7 @@ class KeywordCipher(CipherInterface):
     def _encode_text(self):
         print(f"Keyword Cipher encode; received message is {self.message}.")
         
-        encodedMessage = self.applyCipher()       
+        encodedMessage = self._applyCipher()       
         cipher = ""
   
         for charStr in self.message:
@@ -52,7 +60,7 @@ class KeywordCipher(CipherInterface):
     def _decode_text(self):
         print(f"Keyword decode; received message is {self.message}.")
         deCipher = ""
-        encodedMessage = self.applyCipher()
+        encodedMessage = self._applyCipher()
 
         for charStr in self.message:
             if charStr.isupper():

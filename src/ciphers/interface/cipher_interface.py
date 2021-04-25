@@ -9,15 +9,24 @@ class CipherInterface(metaclass=abc.ABCMeta):
                 callable(subclass._decode_text) or 
                 NotImplemented)
 
-    def encode(self):
+    def encode(self, message, shiftIndex=None, key=None):
         """Encode the message"""
+        
+        self._initialize(message, shiftIndex, key)
         self._validate_input()
         return self._encode_text()
 
-    def decode(self):
-        """Decode the message"""    
+    def decode(self, message, shiftIndex=None, key=None):
+        """Decode the message"""
+
+        self._initialize(message, shiftIndex, key)    
         self._validate_input()    
         return self._decode_text()
+
+    @abc.abstractmethod
+    def _applyCipher(self):
+        """Apply the cipher on the message"""
+        raise NotImplementedError
 
     @abc.abstractmethod
     def _encode_text(self):
@@ -30,7 +39,11 @@ class CipherInterface(metaclass=abc.ABCMeta):
         raise NotImplementedError        
 
     @abc.abstractmethod
-    # def _validate_input(self, message, shiftIndex, key):
+    def _initialize(self, message, shiftIndex=None, key=None):
+        """Validate input"""
+        raise NotImplementedError       
+
+    @abc.abstractmethod
     def _validate_input(self):
         """Validate input"""
         raise NotImplementedError       

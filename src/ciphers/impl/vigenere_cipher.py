@@ -17,7 +17,7 @@ class VigenereCipher(CipherInterface):
         if is_empty(self.message) == True:
             raise ValidationException("Message cannont be empty.")
         elif is_empty(self.keyword) == True:
-            raise ValidationException("Message cannont be empty.")    
+            raise ValidationException("Key cannont be empty.")    
     
     def _applyCipher(self, key):
         msgLen = len(self.message)

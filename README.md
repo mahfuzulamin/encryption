@@ -9,5 +9,5 @@
 * Unit test is implemented for all the ciphers.
 * Documentation is provided for the project.
 
-* **Hexadecimal**
-### The hexadecimal Cipher encodes alphanumeric characters into hexadecimal numbers and decodes hexadecimal numbers to alphanumeric characters. It implements 
+## **Hexadecimal**
+* The hexadecimal Cipher encodes alphanumeric characters into hexadecimal numbers and decodes hexadecimal numbers to alphanumeric characters. It implements 

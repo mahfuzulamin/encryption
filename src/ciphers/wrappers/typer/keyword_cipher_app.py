@@ -3,7 +3,12 @@ import typer
 from ...impl.keyword_cipher import KeywordCipher
 
 def get_keyword_cipher_app():
-    """Keyword Cipher Typer wrapper implementation."""
+    """Keyword Cipher Typer wrapper implementation.
+
+    Returns
+    -------
+    Typer
+    """
 
     app = typer.Typer()
     keywordCipher = KeywordCipher()

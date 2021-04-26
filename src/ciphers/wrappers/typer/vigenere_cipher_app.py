@@ -3,7 +3,12 @@ import typer
 from ...impl.vigenere_cipher import VigenereCipher
 
 def get_vigenere_cipher_app():
-    """Vigenere Cipher Typer wrapper implementation."""
+    """Vigenere Cipher Typer wrapper implementation.
+
+    Returns
+    -------
+    Typer
+    """
 
     app = typer.Typer()
     vigenereCipher = VigenereCipher()

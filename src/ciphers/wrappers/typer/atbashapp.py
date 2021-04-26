@@ -3,7 +3,12 @@ import typer
 from ...impl.atbash import AtBash
 
 def get_atbash_app():
-    """AtBash Cipher Typer wrapper implementation."""
+    """AtBash Cipher Typer wrapper implementation.
+
+    Returns
+    -------
+    Typer
+    """
 
     app = typer.Typer()
     atBash = AtBash()

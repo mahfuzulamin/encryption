@@ -3,7 +3,12 @@ import typer
 from ...impl.hexadecimal import Hexadecimal
 
 def get_hex_app():
-    """Hexadecimal Cipher Typer wrapper implementation."""
+    """Hexadecimal Cipher Typer wrapper implementation.
+
+    Returns
+    -------
+    Typer
+    """
 
     app = typer.Typer()
     hex = Hexadecimal()

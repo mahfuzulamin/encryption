@@ -3,7 +3,12 @@ import typer
 from ...impl.caesarcipher import CaesarCipher
 
 def get_caesarcipher_app():
-    """Caesar Cipher Typer wrapper implementation."""
+    """Caesar Cipher Typer wrapper implementation.
+
+    Returns
+    -------
+    Typer
+    """
 
     app = typer.Typer()
     caesarCipher = CaesarCipher()

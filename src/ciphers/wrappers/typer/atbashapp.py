@@ -19,7 +19,7 @@ def get_atbash_app():
         """
 
         encodedMsg = atBash.encode(message)
-        print(f"AtBash encoded message is {encodedMsg}.")
+        print(f"AtBash encoded message is {encodedMsg}")
 
     @app.command("decode")
     def decode(message):
@@ -32,7 +32,7 @@ def get_atbash_app():
         """
 
         decodedMsg = atBash.decode(message)
-        print(f"AtBash decoded message is {decodedMsg}.")
+        print(f"AtBash decoded message is {decodedMsg}")
 
 
     return app

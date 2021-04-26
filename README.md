@@ -39,3 +39,6 @@
   * Example:
     * Encode: python secrets.py vigenere encode "LEMONLEMONLE" "attackatdawn"
     * Decode: python secrets.py vigenere decode lemonlemonle LXFOPVEFRNHR
+
+## **Unit Test**
+* python3 -m pytest

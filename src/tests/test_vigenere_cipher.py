@@ -38,6 +38,13 @@ def test_vigenere_cipher_encode_empty_key():
     except ValidationException as e:
         assert str(e) == "Key cannont be empty."
 
+def test_vigenere_cipher_encode_key_longer_than_message():
+    message = "ATTACKATDAWN"
+    try:
+        result = vigenereCipher.decode(message, None, "LEMONLEMONLEMON")
+    except ValidationException as e:
+        assert str(e) == "Key cannont be longer than message."             
+
 def test_vigenere_cipher_decode():
     message = "LXFOPVEFRNHR"
     result = vigenereCipher.decode(message, None, "LEMONLEMONLE")
@@ -55,4 +62,11 @@ def test_vigenere_cipher_decode_empty_message():
     try:
         result = vigenereCipher.decode(message, None, "LEMONLEMONLE")
     except ValidationException as e:
-        assert str(e) == "Message cannont be empty."        
+        assert str(e) == "Message cannont be empty." 
+
+def test_vigenere_cipher_decode_key_longer_than_message():
+    message = "CRYP"
+    try:
+        result = vigenereCipher.decode(message, None, "LEMONLEMONLE")
+    except ValidationException as e:
+        assert str(e) == "Key cannont be longer than message."           

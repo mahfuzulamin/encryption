@@ -18,7 +18,12 @@ class VigenereCipher(CipherInterface):
             raise ValidationException("Message cannont be empty.")
         elif is_empty(self.keyword) == True:
             raise ValidationException("Key cannont be empty.")    
-    
+        elif len(self.keyword) < len(self.keyword):
+            raise ValidationException("Key cannont be longer than message.")  
+
+        self.message = self.message.upper()
+        self.keyword = self.keyword.upper()
+
     def _applyCipher(self, key):
         msgLen = len(self.message)
 

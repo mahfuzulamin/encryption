@@ -18,11 +18,9 @@ class Hexadecimal(CipherInterface):
         if is_empty(self.message) == True:
             raise ValidationException("Message cannont be empty.")
 
-
     def _encode_text(self):
         print(f"Hex encode;message is {self.message}.")
         return self.message.encode("utf-8").hex()
-        # return "74657374"
 
     def _decode_text(self):
         print(f"Hex decode; message is {self.message}.")

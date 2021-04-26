@@ -19,7 +19,9 @@ class KeywordCipher(CipherInterface):
             raise ValidationException("Message cannont be empty.")
         elif is_empty(self.keyword) == True:
             raise ValidationException("Key cannont be empty.")    
-
+        elif len(self.keyword) < len(self.keyword):
+            raise ValidationException("Key cannont be longer than message.") 
+            
     def _applyCipher(self):
         encoded = ""
         characterList = [False] * 26

@@ -38,6 +38,13 @@ def test_keyword_cipher_encode_empty_key():
     except ValidationException as e:
         assert str(e) == "Key cannont be empty."
 
+def test_keyword_cipher_encode_key_longer_than_message():
+    message = "test"
+    try:
+        result = keywordCipher.decode(message, None, "kryptos")
+    except ValidationException as e:
+        assert str(e) == "Key cannont be longer than message."   
+
 def test_keyword_cipher_decode():
     message = "YLXINHSLKIAXBMYHHE"
     result = keywordCipher.decode(message, None, "kryptos")
@@ -56,3 +63,10 @@ def test_keyword_cipher_decode_empty_message():
         result = keywordCipher.decode(message, None, "kryptos")
     except ValidationException as e:
         assert str(e) == "Message cannont be empty."        
+
+def test_keyword_cipher_decode_key_longer_than_message():
+    message = "CRYP"
+    try:
+        result = keywordCipher.decode(message, None, "kryptos")
+    except ValidationException as e:
+        assert str(e) == "Key cannont be longer than message."    

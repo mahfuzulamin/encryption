@@ -11,19 +11,19 @@
 * Documentation is provided for the project.
 
 ## **Hexadecimal**
-* The hexadecimal Cipher encodes alphanumeric characters into hexadecimal numbers and decodes hexadecimal numbers to alphanumeric characters. It uses Python's hexadecimal for encode and decode.
+* The hexadecimal Cipher encodes alphanumeric characters into hexadecimal numbers and decodes hexadecimal numbers to alphanumeric characters. It uses Python's hexadecimal library for encode and decode.
   * Example:
     * Encode: python secrets.py hex encode test1
     * Decode: python secrets.py hex decode 7465737431
 
 ## **AtBash Cipher**
-* The AtBash Cipher implements AtBash Cipher algorithm and handles both uppercase and lowercase alphabets together as input. It doesn't encode/decode anything other than alphabet and simply includes in the output.
+* The AtBash Cipher implements AtBash Cipher algorithm and handles both uppercase and lowercase alphabets together as input. It doesn't encode/decode anything other than alphabet and simply includes those in the output.
   * Example:
     * Encode: python secrets.py atbash encode "Flee at once."
     * Decode: python secrets.py atbash decode "Uovv zg lmxv."
 
 ## **Caesar Cipher**
-* The Caesar Cipher implements Caesar Cipher algorithm and handles both uppercase and lowercase alphabets together as input. It doesn't encode/decode anything other than alphabet and includes in the output if provided in the input.
+* The Caesar Cipher implements Caesar Cipher algorithm and handles both uppercase and lowercase alphabets together as input. It doesn't encode/decode anything other than alphabet and includes only space in the output if provided in the input.
   * Example:
     * Encode: python secrets.py caesar encode 3 "Hello World"
     * Decode: python secrets.py caesar decode 3 "Khoor Zruog"

@@ -3,6 +3,25 @@ from ..util.cipher_util import is_empty
 from ..error.validation_exception import ValidationException
 
 class KeywordCipher(CipherInterface):
+    """
+    Implements the Keyword Cipher.
+
+    ...
+
+    Methods
+    -------
+    _applyCipher():
+        Applies the cipher
+    _encode_text():
+        Encodes message   
+    _decode_text():
+        Decodes message   
+    _initialize():
+        Initializes input
+    _validate_input():
+        Validates input
+    """
+
     lowarCaseAsciiValueStart = ord("a")
     upperCaseAsciiValueStart = ord("A")
     plaintext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -11,10 +30,29 @@ class KeywordCipher(CipherInterface):
         pass
 
     def _initialize(self, message, shiftIndex=None, key=None):
+        """Initialize input
+
+        Parameters
+        ----------
+        message : str
+            Message to be decoded
+        shiftIndex : int, optional
+            Shift character index (default is None)
+        key : str, optional
+            Keyword for cipher (default is None)    
+        """
+
         self.message = message
         self.keyword = key
 
     def _validate_input(self):
+        """Validates input
+
+        Returns
+        -------
+        ValidationException for invalid input.
+        """
+
         if is_empty(self.message) == True:
             raise ValidationException("Message cannont be empty.")
         elif is_empty(self.keyword) == True:
@@ -23,6 +61,13 @@ class KeywordCipher(CipherInterface):
             raise ValidationException("Key cannont be longer than message.") 
             
     def _applyCipher(self):
+        """Apply the cipher on the message
+
+        Returns
+        -------
+        Cipher message
+        """
+
         encoded = ""
         characterList = [False] * 26
 
@@ -41,12 +86,19 @@ class KeywordCipher(CipherInterface):
                 encoded += chr(i + self.upperCaseAsciiValueStart)
                 characterList[i] = True
 
-        print(f"Keyword Cipher encoded string: {encoded}.")
+        #print(f"Keyword Cipher encoded string: {encoded}")
 
         return encoded
 
     def _encode_text(self):
-        print(f"Keyword Cipher encode; received message is {self.message}.")
+        """Encode the message
+
+        Returns
+        -------
+        Encoded message string
+        """
+
+        print(f"Keyword Cipher encode; received message is {self.message}")
         
         encodedMessage = self._applyCipher()       
         cipher = ""
@@ -60,7 +112,14 @@ class KeywordCipher(CipherInterface):
         return cipher
 
     def _decode_text(self):
-        print(f"Keyword decode; received message is {self.message}.")
+        """Decode the message
+
+        Returns
+        -------
+        Decoded message string
+        """
+
+        print(f"Keyword Cipher decode; received message is {self.message}")
         deCipher = ""
         encodedMessage = self._applyCipher()
 

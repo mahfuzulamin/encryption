@@ -7,7 +7,13 @@ from .ciphers.wrappers.typer.vigenere_cipher_app import get_vigenere_cipher_app
 import typer
 
 def encryption_app() -> typer.Typer:
+    """Facade design pattern implementation of cypher typer wrappers.
     
+    Returns
+    -------
+    Typer
+    """
+
     app = typer.Typer()
 
     app.add_typer(get_hex_app(), name="hex")

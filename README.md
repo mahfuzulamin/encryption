@@ -35,7 +35,7 @@
     * Decode: python secrets.py keyword decode "kryptos" DGHVETPSTBMIHVTL
 
 ## **Vigenère Cipher**
-* The Keyword Cipher implements Vigenère Cipher algorithm and handles only uppercase alphabets and outputs uppercase message. It takes both uppercase and lowercase alphabets as input and coverts in uppercase before processing. It doesn't encode/decode anything other than alphabet. Key cannot be longer than the message.
+* The Keyword Cipher implements Vigenère Cipher algorithm and handles only uppercase alphabets and outputs uppercase message. It takes both uppercase and lowercase alphabets as input and converts in uppercase before processing. It doesn't encode/decode anything other than alphabet. Key cannot be longer than the message.
   * Example:
     * Encode: python secrets.py vigenere encode "LEMONLEMONLE" "attackatdawn"
     * Decode: python secrets.py vigenere decode lemonlemonle LXFOPVEFRNHR
